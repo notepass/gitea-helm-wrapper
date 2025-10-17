@@ -1,0 +1,20 @@
+gitea:
+  valkey-cluster:
+    enabled: false
+  valkey:
+    enabled: true
+  postgresql:
+    enabled: true
+  postgresql-ha:
+    enabled: false
+
+  persistence:
+    enabled: true
+
+  gitea:
+    config:
+      database:
+        DB_TYPE: postgres
+      indexer:
+        ISSUE_INDEXER_TYPE: bleve
+        REPO_INDEXER_ENABLED: true
