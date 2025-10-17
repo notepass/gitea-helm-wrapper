@@ -4,17 +4,27 @@ gitea:
   valkey:
     enabled: true
   postgresql:
-    enabled: true
+    enabled: false
   postgresql-ha:
     enabled: false
 
   persistence:
-    enabled: true
+    enabled: false
 
   gitea:
     config:
+      server:
+        ROOT_URL: "https://git.local.kyma.dev/"
       database:
-        DB_TYPE: postgres
-      indexer:
-        ISSUE_INDEXER_TYPE: bleve
-        REPO_INDEXER_ENABLED: true
+        DB_TYPE: sqlite3
+      session:
+        PROVIDER: memory
+      cache:
+        ADAPTER: memory
+      queue:
+        TYPE: level
+    admin:
+      username: "admin"
+      password: "password"
+      email: "admin@example.com"
+
